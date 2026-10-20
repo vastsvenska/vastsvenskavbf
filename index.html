@@ -40,6 +40,22 @@
     border-bottom: 6px solid var(--yellow);
   }
   .wrap { max-width: 760px; margin: 0 auto; }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .logo {
+    display: block;
+    height: 140px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .head-text { min-width: 0; }
+  @media (max-width: 520px) {
+    .head { gap: 16px; }
+    .logo { height: 90px; }
+  }
   header p.kicker {
     margin: 0 0 8px;
     font-size: 0.85rem;
@@ -104,7 +120,36 @@
     font-size: 0.9rem;
     padding: 0 16px 40px;
   }
+  h3 { margin: 20px 0 8px; font-size: 1.05rem; }
+  ul.people { list-style: none; margin: 0 0 12px; padding: 0; }
+  ul.people li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  ul.people li:last-child { border-bottom: 0; }
+  .role { color: var(--muted); text-align: right; }
+  .note { color: var(--muted); font-size: 0.95rem; }
+  ul.plain { margin: 0 0 12px; padding-left: 20px; }
+  .links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .links a {
+    display: block;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .links a:hover { border-color: var(--blue); }
   @media (max-width: 520px) {
+    ul.people li { flex-direction: column; gap: 0; }
+    .role { text-align: left; }
     dl { grid-template-columns: 1fr; gap: 2px; }
     dd { margin-bottom: 10px; }
   }
@@ -112,10 +157,13 @@
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <p class="kicker">Distriktsförbund inom Svenska Volleybollförbundet</p>
-    <h1>Västsvenska Volleybollförbundet</h1>
-    <p class="lead">Volleyboll och beachvolley i Västsverige</p>
+  <div class="wrap head">
+    <img class="logo" src="headersvb.svg" alt="Svensk Volleyboll – Västsvenska VBF">
+    <div class="head-text">
+      <p class="kicker">Distriktsförbund inom Svenska Volleybollförbundet</p>
+      <h1>Västsvenska Volleybollförbundet</h1>
+      <p class="lead">Volleyboll och beachvolley i Västsverige</p>
+    </div>
   </div>
 </header>
 
@@ -129,6 +177,40 @@
     <section>
       <h2>Utbredning</h2>
       <p>Distriktet omfattar ett stort område med föreningar från Karlstad i norr till Göteborg i söder. Österut är det Habo och Örebro som avgränsar.</p>
+    </section>
+
+    <section>
+      <h2>Styrelsen 2026/2027</h2>
+      <ul class="people">
+        <li><span>Dejna Selimovic Kitusa</span><span class="role">Ordförande · Mölndal</span></li>
+        <li><span>Thomas Rydberg</span><span class="role">Sekreterare · Mölndal</span></li>
+        <li><span>Caroline Johansson</span><span class="role">Ledamot · Alingsås</span></li>
+        <li><span>Markus Lampio</span><span class="role">Ledamot · Trollhättan</span></li>
+        <li><span>Maria Månsson</span><span class="role">Ledamot · Mölnlycke</span></li>
+        <li><span>Anna Lindman</span><span class="role">Ledamot · Habo</span></li>
+        <li><span>Alvin Almberg</span><span class="role">Ledamot · Habo</span></li>
+        <li><span>Örjan Brus</span><span class="role">Ledamot · Örebro</span></li>
+        <li><span>Max Callenberg</span><span class="role">Ledamot · Göteborg</span></li>
+      </ul>
+      <p class="note">Adjungerad tävlingsledare: Ilkka Räisänen, Borås</p>
+      <h3>Valberedning 2026/2027</h3>
+      <ul class="plain">
+        <li>Jens Ottosson, Habo</li>
+        <li>Lars-Ove Larsson, Sollebrunn</li>
+      </ul>
+      <p><a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/om-oss">Årsmöteshandlingar och stadgar</a></p>
+    </section>
+
+    <section>
+      <h2>Snabblänkar</h2>
+      <div class="links">
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/tavling">Tävling</a>
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/utbildning">Utbildning</a>
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/barn-och-ungdom">Barn och ungdom</a>
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/borja-spela">Börja spela</a>
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/ekonomiskt-stod">Ekonomiskt stöd</a>
+        <a href="https://volleyboll.se/forbundet/distrikt/vastsvenska-vbf/nyheter">Nyheter</a>
+      </div>
     </section>
 
     <section>
